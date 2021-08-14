@@ -32,6 +32,10 @@
 		<key>NSExtensionPointIdentifier</key>
 		<string>com.apple.watchkit</string>
 	</dict>
+	<key>NSHealthShareUsageDescription</key>
+	<string>Share Healthkit</string>
+	<key>NSHealthUpdateUsageDescription</key>
+	<string>Update Healthkit</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>Always and when in use</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
