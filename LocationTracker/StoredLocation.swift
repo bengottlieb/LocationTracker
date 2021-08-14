@@ -8,15 +8,15 @@
 import Foundation
 import CoreLocation
 
-struct StoredLocation {
-	let location: CLLocation
-	let date: Date
+public struct StoredLocation {
+	public let location: CLLocation
+	public let date: Date
 }
 
 extension StoredLocation: Codable {
 	enum CodingKeys: String, CodingKey { case date, latitude, longitude, altitude, horizontalAccuracy, verticalAccuracy, course, courseAccuracy, speed, speedAccuracy, timestamp }
 	
-	func encode(to encoder: Encoder) throws {
+	public func encode(to encoder: Encoder) throws {
 		var container = encoder.container(keyedBy: CodingKeys.self)
 		
 		try container.encode(date, forKey: .date)
@@ -35,7 +35,7 @@ extension StoredLocation: Codable {
 		try container.encode(location.horizontalAccuracy, forKey: .horizontalAccuracy)
 	}
 	
-	init(from decoder: Decoder) throws {
+	public init(from decoder: Decoder) throws {
 		let container = try decoder.container(keyedBy: CodingKeys.self)
 		
 		date = try container.decode(Date.self, forKey: .date)

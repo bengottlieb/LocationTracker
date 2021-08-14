@@ -19,6 +19,8 @@ public class GPSManager: NSObject, ObservableObject {
 	let locationManager = CLLocationManager()
 	
 	var locations: [StoredLocation] = []
+	var counterpartLocations: [StoredLocation] = []
+	
 	override init() {
 		super.init()
 		locationManager.delegate = self
@@ -31,6 +33,13 @@ public class GPSManager: NSObject, ObservableObject {
 		if isAllowed { return }
 		
 		locationManager.requestAlwaysAuthorization()
+	}
+	
+	public func received(counterpartLocation: StoredLocation) {
+		DispatchQueue.main.async {
+			self.objectWillChange.send()
+			self.counterpartLocations.append(counterpartLocation)
+		}
 	}
 	
 	public func save(to filename: String) {
@@ -56,6 +65,7 @@ public class GPSManager: NSObject, ObservableObject {
 	public func reset() {
 		objectWillChange.send()
 		locations = []
+		counterpartLocations = []
 	}
 	
 	public func start() {

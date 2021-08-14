@@ -10,6 +10,7 @@
 		B514443826C840BE00E5948D /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B514443726C840BE00E5948D /* MapView.swift */; };
 		B514443A26C8442300E5948D /* MapTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = B514443926C8442300E5948D /* MapTab.swift */; };
 		B514443C26C8443C00E5948D /* ControlsTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = B514443B26C8443C00E5948D /* ControlsTab.swift */; };
+		B514443E26C85E3600E5948D /* MessageHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B514443D26C85E3600E5948D /* MessageHandler.swift */; };
 		B556296726C72426001DD83B /* LocationTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B556296626C72426001DD83B /* LocationTrackerApp.swift */; };
 		B556296926C72426001DD83B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B556296826C72426001DD83B /* ContentView.swift */; };
 		B556296B26C72427001DD83B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B556296A26C72427001DD83B /* Assets.xcassets */; };
@@ -81,6 +82,7 @@
 		B514443726C840BE00E5948D /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		B514443926C8442300E5948D /* MapTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapTab.swift; sourceTree = "<group>"; };
 		B514443B26C8443C00E5948D /* ControlsTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlsTab.swift; sourceTree = "<group>"; };
+		B514443D26C85E3600E5948D /* MessageHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageHandler.swift; sourceTree = "<group>"; };
 		B556296326C72426001DD83B /* LocationTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocationTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B556296626C72426001DD83B /* LocationTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTrackerApp.swift; sourceTree = "<group>"; };
 		B556296826C72426001DD83B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 			children = (
 				B58D3E9C26C7F6BD00B2B4CE /* LocationTracker.entitlements */,
 				B556296626C72426001DD83B /* LocationTrackerApp.swift */,
+				B514443D26C85E3600E5948D /* MessageHandler.swift */,
 				B556297526C72833001DD83B /* GPSManager.swift */,
 				B55629AD26C74754001DD83B /* StoredLocation.swift */,
 				B556296826C72426001DD83B /* ContentView.swift */,
@@ -363,6 +366,7 @@
 			files = (
 				B556296926C72426001DD83B /* ContentView.swift in Sources */,
 				B514443C26C8443C00E5948D /* ControlsTab.swift in Sources */,
+				B514443E26C85E3600E5948D /* MessageHandler.swift in Sources */,
 				B55629AE26C74754001DD83B /* StoredLocation.swift in Sources */,
 				B514443826C840BE00E5948D /* MapView.swift in Sources */,
 				B556297626C72833001DD83B /* GPSManager.swift in Sources */,

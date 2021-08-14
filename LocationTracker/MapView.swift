@@ -32,7 +32,6 @@ struct MapView: UIViewRepresentable {
 	
 	typealias UIViewType = MKMapView
 	
-	
 	class Coordinator: NSObject, MKMapViewDelegate {
 		let view = MKMapView(frame: UIScreen.main.bounds)
 		var poly: MKGeodesicPolyline?
