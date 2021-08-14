@@ -1,6 +1,6 @@
 //
 //  ContentView.swift
-//  LocationTracker
+//  LocationTracker_Watch Extension
 //
 //  Created by Ben Gottlieb on 8/13/21.
 //
@@ -9,7 +9,6 @@ import SwiftUI
 
 struct ContentView: View {
 	@ObservedObject var gps = GPSManager.instance
-	
 	var body: some View {
 		VStack() {
 			if gps.isAllowed {
@@ -25,9 +24,9 @@ struct ContentView: View {
 					.padding()
 				}
 				
-				Text("Total distance: \(gps.trackedDistance) m")
+				Text("Total: \(gps.trackedDistance) m")
 					.padding()
-
+				
 				Button("Reset") {
 					gps.reset()
 				}
@@ -37,6 +36,7 @@ struct ContentView: View {
 					gps.requestPermissions()
 				}
 			}
+			
 		}
 	}
 }

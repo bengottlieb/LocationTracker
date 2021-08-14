@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,7 +11,66 @@
 		B556296926C72426001DD83B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B556296826C72426001DD83B /* ContentView.swift */; };
 		B556296B26C72427001DD83B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B556296A26C72427001DD83B /* Assets.xcassets */; };
 		B556296E26C72427001DD83B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B556296D26C72427001DD83B /* Preview Assets.xcassets */; };
+		B556297626C72833001DD83B /* GPSManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B556297526C72833001DD83B /* GPSManager.swift */; };
+		B556297926C741AC001DD83B /* Suite in Frameworks */ = {isa = PBXBuildFile; productRef = B556297826C741AC001DD83B /* Suite */; };
+		B556297C26C741B9001DD83B /* Portal in Frameworks */ = {isa = PBXBuildFile; productRef = B556297B26C741B9001DD83B /* Portal */; };
+		B556298226C74335001DD83B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B556298126C74335001DD83B /* Assets.xcassets */; };
+		B556298926C74336001DD83B /* LocationTracker_Watch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = B556298826C74336001DD83B /* LocationTracker_Watch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		B556298E26C74336001DD83B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B556298D26C74336001DD83B /* ContentView.swift */; };
+		B556299026C74336001DD83B /* LocationTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B556298F26C74336001DD83B /* LocationTrackerApp.swift */; };
+		B556299226C74336001DD83B /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B556299126C74336001DD83B /* ComplicationController.swift */; };
+		B556299426C74336001DD83B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B556299326C74336001DD83B /* Assets.xcassets */; };
+		B556299726C74336001DD83B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B556299626C74336001DD83B /* Preview Assets.xcassets */; };
+		B556299B26C74336001DD83B /* LocationTracker_Watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = B556297F26C74334001DD83B /* LocationTracker_Watch.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		B55629A426C743F7001DD83B /* GPSManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B556297526C72833001DD83B /* GPSManager.swift */; };
+		B55629A726C7462A001DD83B /* WatchWorkout in Frameworks */ = {isa = PBXBuildFile; productRef = B55629A626C7462A001DD83B /* WatchWorkout */; };
+		B55629AA26C7469D001DD83B /* Portal in Frameworks */ = {isa = PBXBuildFile; productRef = B55629A926C7469D001DD83B /* Portal */; };
+		B55629AC26C746A1001DD83B /* Suite in Frameworks */ = {isa = PBXBuildFile; productRef = B55629AB26C746A1001DD83B /* Suite */; };
+		B55629AE26C74754001DD83B /* StoredLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55629AD26C74754001DD83B /* StoredLocation.swift */; };
+		B55629AF26C74757001DD83B /* StoredLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55629AD26C74754001DD83B /* StoredLocation.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B556298A26C74336001DD83B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B556295B26C72426001DD83B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B556298726C74336001DD83B;
+			remoteInfo = "LocationTracker_Watch Extension";
+		};
+		B556299926C74336001DD83B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B556295B26C72426001DD83B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B556297E26C74334001DD83B;
+			remoteInfo = LocationTracker_Watch;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B556299F26C74336001DD83B /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				B556298926C74336001DD83B /* LocationTracker_Watch Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B55629A326C74336001DD83B /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				B556299B26C74336001DD83B /* LocationTracker_Watch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		B556296326C72426001DD83B /* LocationTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocationTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -20,6 +79,18 @@
 		B556296A26C72427001DD83B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B556296D26C72427001DD83B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B556296F26C72427001DD83B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B556297526C72833001DD83B /* GPSManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPSManager.swift; sourceTree = "<group>"; };
+		B556297F26C74334001DD83B /* LocationTracker_Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocationTracker_Watch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B556298126C74335001DD83B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B556298326C74335001DD83B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B556298826C74336001DD83B /* LocationTracker_Watch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "LocationTracker_Watch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B556298D26C74336001DD83B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		B556298F26C74336001DD83B /* LocationTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTrackerApp.swift; sourceTree = "<group>"; };
+		B556299126C74336001DD83B /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		B556299326C74336001DD83B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B556299626C74336001DD83B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		B556299826C74336001DD83B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B55629AD26C74754001DD83B /* StoredLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoredLocation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,6 +98,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B556297C26C741B9001DD83B /* Portal in Frameworks */,
+				B556297926C741AC001DD83B /* Suite in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B556298526C74336001DD83B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B55629AC26C746A1001DD83B /* Suite in Frameworks */,
+				B55629AA26C7469D001DD83B /* Portal in Frameworks */,
+				B55629A726C7462A001DD83B /* WatchWorkout in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -37,7 +120,10 @@
 			isa = PBXGroup;
 			children = (
 				B556296526C72426001DD83B /* LocationTracker */,
+				B556298026C74335001DD83B /* LocationTracker_Watch */,
+				B556298C26C74336001DD83B /* LocationTracker_Watch Extension */,
 				B556296426C72426001DD83B /* Products */,
+				B55629A826C7469D001DD83B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -45,6 +131,8 @@
 			isa = PBXGroup;
 			children = (
 				B556296326C72426001DD83B /* LocationTracker.app */,
+				B556297F26C74334001DD83B /* LocationTracker_Watch.app */,
+				B556298826C74336001DD83B /* LocationTracker_Watch Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -53,6 +141,8 @@
 			isa = PBXGroup;
 			children = (
 				B556296626C72426001DD83B /* LocationTrackerApp.swift */,
+				B556297526C72833001DD83B /* GPSManager.swift */,
+				B55629AD26C74754001DD83B /* StoredLocation.swift */,
 				B556296826C72426001DD83B /* ContentView.swift */,
 				B556296A26C72427001DD83B /* Assets.xcassets */,
 				B556296F26C72427001DD83B /* Info.plist */,
@@ -69,6 +159,43 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		B556298026C74335001DD83B /* LocationTracker_Watch */ = {
+			isa = PBXGroup;
+			children = (
+				B556298126C74335001DD83B /* Assets.xcassets */,
+				B556298326C74335001DD83B /* Info.plist */,
+			);
+			path = LocationTracker_Watch;
+			sourceTree = "<group>";
+		};
+		B556298C26C74336001DD83B /* LocationTracker_Watch Extension */ = {
+			isa = PBXGroup;
+			children = (
+				B556298D26C74336001DD83B /* ContentView.swift */,
+				B556298F26C74336001DD83B /* LocationTrackerApp.swift */,
+				B556299126C74336001DD83B /* ComplicationController.swift */,
+				B556299326C74336001DD83B /* Assets.xcassets */,
+				B556299826C74336001DD83B /* Info.plist */,
+				B556299526C74336001DD83B /* Preview Content */,
+			);
+			path = "LocationTracker_Watch Extension";
+			sourceTree = "<group>";
+		};
+		B556299526C74336001DD83B /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				B556299626C74336001DD83B /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		B55629A826C7469D001DD83B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -79,15 +206,60 @@
 				B556295F26C72426001DD83B /* Sources */,
 				B556296026C72426001DD83B /* Frameworks */,
 				B556296126C72426001DD83B /* Resources */,
+				B55629A326C74336001DD83B /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B556299A26C74336001DD83B /* PBXTargetDependency */,
+			);
+			name = LocationTracker;
+			packageProductDependencies = (
+				B556297826C741AC001DD83B /* Suite */,
+				B556297B26C741B9001DD83B /* Portal */,
+			);
+			productName = LocationTracker;
+			productReference = B556296326C72426001DD83B /* LocationTracker.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B556297E26C74334001DD83B /* LocationTracker_Watch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B55629A026C74336001DD83B /* Build configuration list for PBXNativeTarget "LocationTracker_Watch" */;
+			buildPhases = (
+				B556297D26C74334001DD83B /* Resources */,
+				B556299F26C74336001DD83B /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B556298B26C74336001DD83B /* PBXTargetDependency */,
+			);
+			name = LocationTracker_Watch;
+			productName = LocationTracker_Watch;
+			productReference = B556297F26C74334001DD83B /* LocationTracker_Watch.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		B556298726C74336001DD83B /* LocationTracker_Watch Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B556299C26C74336001DD83B /* Build configuration list for PBXNativeTarget "LocationTracker_Watch Extension" */;
+			buildPhases = (
+				B556298426C74336001DD83B /* Sources */,
+				B556298526C74336001DD83B /* Frameworks */,
+				B556298626C74336001DD83B /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = LocationTracker;
-			productName = LocationTracker;
-			productReference = B556296326C72426001DD83B /* LocationTracker.app */;
-			productType = "com.apple.product-type.application";
+			name = "LocationTracker_Watch Extension";
+			packageProductDependencies = (
+				B55629A626C7462A001DD83B /* WatchWorkout */,
+				B55629A926C7469D001DD83B /* Portal */,
+				B55629AB26C746A1001DD83B /* Suite */,
+			);
+			productName = "LocationTracker_Watch Extension";
+			productReference = B556298826C74336001DD83B /* LocationTracker_Watch Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -101,6 +273,12 @@
 					B556296226C72426001DD83B = {
 						CreatedOnToolsVersion = 12.5;
 					};
+					B556297E26C74334001DD83B = {
+						CreatedOnToolsVersion = 12.5;
+					};
+					B556298726C74336001DD83B = {
+						CreatedOnToolsVersion = 12.5;
+					};
 				};
 			};
 			buildConfigurationList = B556295E26C72426001DD83B /* Build configuration list for PBXProject "LocationTracker" */;
@@ -112,11 +290,18 @@
 				Base,
 			);
 			mainGroup = B556295A26C72426001DD83B;
+			packageReferences = (
+				B556297726C741AC001DD83B /* XCRemoteSwiftPackageReference "suite" */,
+				B556297A26C741B9001DD83B /* XCRemoteSwiftPackageReference "portal" */,
+				B55629A526C7462A001DD83B /* XCRemoteSwiftPackageReference "watchworkout" */,
+			);
 			productRefGroup = B556296426C72426001DD83B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				B556296226C72426001DD83B /* LocationTracker */,
+				B556297E26C74334001DD83B /* LocationTracker_Watch */,
+				B556298726C74336001DD83B /* LocationTracker_Watch Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -131,6 +316,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B556297D26C74334001DD83B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B556298226C74335001DD83B /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B556298626C74336001DD83B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B556299726C74336001DD83B /* Preview Assets.xcassets in Resources */,
+				B556299426C74336001DD83B /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -139,11 +341,38 @@
 			buildActionMask = 2147483647;
 			files = (
 				B556296926C72426001DD83B /* ContentView.swift in Sources */,
+				B55629AE26C74754001DD83B /* StoredLocation.swift in Sources */,
+				B556297626C72833001DD83B /* GPSManager.swift in Sources */,
 				B556296726C72426001DD83B /* LocationTrackerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B556298426C74336001DD83B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B55629A426C743F7001DD83B /* GPSManager.swift in Sources */,
+				B556298E26C74336001DD83B /* ContentView.swift in Sources */,
+				B556299026C74336001DD83B /* LocationTrackerApp.swift in Sources */,
+				B55629AF26C74757001DD83B /* StoredLocation.swift in Sources */,
+				B556299226C74336001DD83B /* ComplicationController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B556298B26C74336001DD83B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B556298726C74336001DD83B /* LocationTracker_Watch Extension */;
+			targetProxy = B556298A26C74336001DD83B /* PBXContainerItemProxy */;
+		};
+		B556299A26C74336001DD83B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B556297E26C74334001DD83B /* LocationTracker_Watch */;
+			targetProxy = B556299926C74336001DD83B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		B556297026C72427001DD83B /* Debug */ = {
@@ -269,7 +498,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"LocationTracker/Preview Content\"";
-				DEVELOPMENT_TEAM = YY6CWUX533;
+				DEVELOPMENT_TEAM = NGKJZ9J4ZY;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = LocationTracker/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -277,7 +506,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.standalone.LocationTracker;
+				PRODUCT_BUNDLE_IDENTIFIER = ai.strongest.gpstracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -291,7 +520,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"LocationTracker/Preview Content\"";
-				DEVELOPMENT_TEAM = YY6CWUX533;
+				DEVELOPMENT_TEAM = NGKJZ9J4ZY;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = LocationTracker/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -299,10 +528,98 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.standalone.LocationTracker;
+				PRODUCT_BUNDLE_IDENTIFIER = ai.strongest.gpstracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		B556299D26C74336001DD83B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"LocationTracker_Watch Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = NGKJZ9J4ZY;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "LocationTracker_Watch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ai.strongest.gpstracker.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.4;
+			};
+			name = Debug;
+		};
+		B556299E26C74336001DD83B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"LocationTracker_Watch Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = NGKJZ9J4ZY;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "LocationTracker_Watch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ai.strongest.gpstracker.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.4;
+			};
+			name = Release;
+		};
+		B55629A126C74336001DD83B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NGKJZ9J4ZY;
+				IBSC_MODULE = LocationTracker_Watch_Extension;
+				INFOPLIST_FILE = LocationTracker_Watch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = ai.strongest.gpstracker.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.4;
+			};
+			name = Debug;
+		};
+		B55629A226C74336001DD83B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NGKJZ9J4ZY;
+				IBSC_MODULE = LocationTracker_Watch_Extension;
+				INFOPLIST_FILE = LocationTracker_Watch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = ai.strongest.gpstracker.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.4;
 			};
 			name = Release;
 		};
@@ -327,7 +644,80 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		B556299C26C74336001DD83B /* Build configuration list for PBXNativeTarget "LocationTracker_Watch Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B556299D26C74336001DD83B /* Debug */,
+				B556299E26C74336001DD83B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B55629A026C74336001DD83B /* Build configuration list for PBXNativeTarget "LocationTracker_Watch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B55629A126C74336001DD83B /* Debug */,
+				B55629A226C74336001DD83B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B556297726C741AC001DD83B /* XCRemoteSwiftPackageReference "suite" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/bengottlieb/suite";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.10.86;
+			};
+		};
+		B556297A26C741B9001DD83B /* XCRemoteSwiftPackageReference "portal" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/bengottlieb/portal";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.31;
+			};
+		};
+		B55629A526C7462A001DD83B /* XCRemoteSwiftPackageReference "watchworkout" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/bengottlieb/watchworkout";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.11;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B556297826C741AC001DD83B /* Suite */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B556297726C741AC001DD83B /* XCRemoteSwiftPackageReference "suite" */;
+			productName = Suite;
+		};
+		B556297B26C741B9001DD83B /* Portal */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B556297A26C741B9001DD83B /* XCRemoteSwiftPackageReference "portal" */;
+			productName = Portal;
+		};
+		B55629A626C7462A001DD83B /* WatchWorkout */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B55629A526C7462A001DD83B /* XCRemoteSwiftPackageReference "watchworkout" */;
+			productName = WatchWorkout;
+		};
+		B55629A926C7469D001DD83B /* Portal */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B556297A26C741B9001DD83B /* XCRemoteSwiftPackageReference "portal" */;
+			productName = Portal;
+		};
+		B55629AB26C746A1001DD83B /* Suite */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B556297726C741AC001DD83B /* XCRemoteSwiftPackageReference "suite" */;
+			productName = Suite;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B556295B26C72426001DD83B /* Project object */;
 }

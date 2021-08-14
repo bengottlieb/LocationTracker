@@ -1,0 +1,34 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Portal",
+        "repositoryURL": "https://github.com/bengottlieb/portal",
+        "state": {
+          "branch": null,
+          "revision": "6693422807af8379266b2f57acde0f29cb2460da",
+          "version": "0.0.31"
+        }
+      },
+      {
+        "package": "Suite",
+        "repositoryURL": "https://github.com/bengottlieb/suite",
+        "state": {
+          "branch": null,
+          "revision": "fe93208aca7aafbe2ada2425e7577618595f9d14",
+          "version": "0.10.86"
+        }
+      },
+      {
+        "package": "WatchWorkout",
+        "repositoryURL": "https://github.com/bengottlieb/watchworkout",
+        "state": {
+          "branch": null,
+          "revision": "f01761d29dd0f6bb970d02332bdf14dddf58891f",
+          "version": "0.0.11"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
