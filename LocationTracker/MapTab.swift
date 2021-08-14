@@ -11,7 +11,8 @@ struct MapTab: View {
 	@ObservedObject var gps = GPSManager.instance
 
 	var body: some View {
-		MapView(path: gps.locations.map { $0.location })
+		let locations = gps.useCounterpartLocations ? gps.counterpartLocations : gps.locations
+		MapView(path: locations.map { $0.location })
 	}
 }
 

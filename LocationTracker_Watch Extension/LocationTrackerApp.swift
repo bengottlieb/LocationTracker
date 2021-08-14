@@ -6,10 +6,18 @@
 //
 
 import SwiftUI
+import Portal
 
 @main
 struct LocationTrackerApp: App {
-    var body: some Scene {
+	init() {
+		DevicePortal.verboseErrorMessages = true
+		PortalToPhone.setup(messageHandler: MessageHandler.instance)
+		DevicePortal.instance.connect()
+		GPSManager.instance.sendToCounterpart = true
+	}
+
+	var body: some Scene {
         WindowGroup {
             NavigationView {
                 ContentView()

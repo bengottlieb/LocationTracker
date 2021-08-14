@@ -32,6 +32,7 @@
 		B55629AC26C746A1001DD83B /* Suite in Frameworks */ = {isa = PBXBuildFile; productRef = B55629AB26C746A1001DD83B /* Suite */; };
 		B55629AE26C74754001DD83B /* StoredLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55629AD26C74754001DD83B /* StoredLocation.swift */; };
 		B55629AF26C74757001DD83B /* StoredLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55629AD26C74754001DD83B /* StoredLocation.swift */; };
+		B57224B026C874A500B08034 /* MessageHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B514443D26C85E3600E5948D /* MessageHandler.swift */; };
 		B58D3E9B26C7F6B400B2B4CE /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B58D3E9A26C7F6B400B2B4CE /* HealthKit.framework */; };
 		B58D3E9E26C7F6BD00B2B4CE /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B58D3E9D26C7F6BD00B2B4CE /* HealthKit.framework */; };
 /* End PBXBuildFile section */
@@ -383,6 +384,7 @@
 				B556298E26C74336001DD83B /* ContentView.swift in Sources */,
 				B556299026C74336001DD83B /* LocationTrackerApp.swift in Sources */,
 				B55629AF26C74757001DD83B /* StoredLocation.swift in Sources */,
+				B57224B026C874A500B08034 /* MessageHandler.swift in Sources */,
 				B556299226C74336001DD83B /* ComplicationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

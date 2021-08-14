@@ -8,13 +8,21 @@
 import Foundation
 import CoreLocation
 import Suite
+import Portal
 
 public class GPSManager: NSObject, ObservableObject {
 	public static let instance = GPSManager()
 	public var isTracking: Bool { trackCount > 0 }
 	public var isAllowed = false
-	public var trackedDistance: Double { locations.totalDistance(requiredAccuracy: requiredAccuracy) }
+	public var trackedDistance: Double {
+		if useCounterpartLocations {
+			return counterpartLocations.totalDistance(requiredAccuracy: requiredAccuracy)
+		}
+		return locations.totalDistance(requiredAccuracy: requiredAccuracy)
+	}
 	public var requiredAccuracy = 20.0
+	public var sendToCounterpart = false
+	@Published public var useCounterpartLocations = false
 	
 	let locationManager = CLLocationManager()
 	
@@ -64,8 +72,11 @@ public class GPSManager: NSObject, ObservableObject {
 	
 	public func reset() {
 		objectWillChange.send()
-		locations = []
-		counterpartLocations = []
+		if useCounterpartLocations {
+			counterpartLocations = []
+		} else {
+			locations = []
+		}
 	}
 	
 	public func start() {
@@ -89,7 +100,10 @@ public class GPSManager: NSObject, ObservableObject {
 	}
 	
 	public var recentAccuracy: Double? {
-		locations.accuracy(since: Date(timeIntervalSinceNow: -30))
+		if useCounterpartLocations {
+			return counterpartLocations.accuracy(since: Date(timeIntervalSinceNow: -30))
+		}
+		return locations.accuracy(since: Date(timeIntervalSinceNow: -30))
 	}
 }
 
@@ -98,9 +112,11 @@ extension GPSManager: CLLocationManagerDelegate {
 		if let location = locations.last,
 				location.horizontalAccuracy != -1,
 				abs(location.timestamp.timeIntervalSinceNow) < 10 {
+					let stored = StoredLocation(location: location, date: Date())
+			if sendToCounterpart { DevicePortal.instance.send(stored) }
 					DispatchQueue.main.async {
 						self.objectWillChange.send()
-						self.locations.append(StoredLocation(location: location, date: Date()))
+						self.locations.append(stored)
 					}
 			}
 	}

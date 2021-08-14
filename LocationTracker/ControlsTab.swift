@@ -12,11 +12,12 @@ struct ControlsTab: View {
 	@ObservedObject var gps = GPSManager.instance
 	public let heartRateType = HKQuantityType.quantityType(forIdentifier: .heartRate)!
 	@State var isFileSaved = FileManager.default.fileExists(at: .document(named: Self.filename))
-	
 	static let filename = "saved.txt"
 	
 	var body: some View {
 		VStack() {
+			Toggle("Counterpart", isOn: $gps.useCounterpartLocations).padding()
+			
 			Button("Authorize Healthkit") {
 				HKHealthStore().requestAuthorization(toShare: [HKObjectType.workoutType()], read: [HKObjectType.workoutType(), heartRateType, HKQuantityType.quantityType(forIdentifier: .activeEnergyBurned)!, HKQuantityType.quantityType(forIdentifier: .basalEnergyBurned)!]) { success, error in
 					if let err = error {
@@ -26,6 +27,11 @@ struct ControlsTab: View {
 			}
 
 			if gps.isAllowed {
+				Group() {
+					Text("Total distance: \(String(format: "%.02f ±%.03f", gps.trackedDistance, gps.recentAccuracy ?? 0)) m")
+				}
+				.padding()
+
 				if gps.isTracking {
 					Button("Stop Tracking") {
 						gps.stop()
@@ -38,11 +44,6 @@ struct ControlsTab: View {
 					.padding()
 				}
 				
-				Group() {
-					Text("Total distance: \(String(format: "%.02f ±%.03f", gps.trackedDistance, gps.recentAccuracy ?? 0)) m")
-				}
-				.padding()
-
 				Button("Reset") {
 					gps.reset()
 				}

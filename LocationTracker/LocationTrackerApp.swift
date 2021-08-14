@@ -6,12 +6,15 @@
 //
 
 import SwiftUI
+import Portal
 
 @main
 struct LocationTrackerApp: App {
 	init() {
-		
+		PortalToWatch.setup(messageHandler: MessageHandler.instance)
+		DevicePortal.instance.connect()
 	}
+
 	var body: some Scene {
 		WindowGroup {
 			ContentView()
