@@ -50,16 +50,30 @@ public class GPSManager: NSObject, ObservableObject {
 		}
 	}
 	
-	public func save(to filename: String) {
-		guard locations.isNotEmpty, let data = try? JSONEncoder().encode(locations) else { return }
+	@discardableResult
+	public func save(to filename: String) -> Bool {
+		save(to: URL.document(named: filename))
+	}
+
+	@discardableResult
+	public func save(to url: URL) -> Bool {
+		guard locations.isNotEmpty, let data = try? JSONEncoder().encode(locations) else { return false }
 		
-		let url = URL.document(named: filename)
-		try? data.write(to: url)
+		do {
+			try data.write(to: url)
+			return true
+		} catch {
+			return false
+		}
+	}
+
+	public func load(from filename: String) {
+		load(from: .document(named: filename))
 	}
 	
-	public func load(from filename: String) {
+	public func load(from url: URL) {
 		guard
-			let data = try? Data(contentsOf: URL.document(named: filename)),
+			let data = try? Data(contentsOf: url),
 			let locs = try? JSONDecoder().decode([StoredLocation].self, from: data) else { return }
 		
 		objectWillChange.send()

@@ -5,12 +5,21 @@
 //  Created by Ben Gottlieb on 8/13/21.
 //
 
-import SwiftUI
+import Suite
 import WatchWorkout
+import Portal
 
 struct ContentView: View {
 	@ObservedObject var gps = GPSManager.instance
 	@ObservedObject var workouts = WatchWorkoutManager.instance
+	
+	func sendFile() {
+		let file = FileManager.tempFileURL(extension: "txt")
+		if gps.save(to: file) {
+			DevicePortal.instance.send(file)
+		}
+	}
+
 	var body: some View {
 		ScrollView() {
 			VStack() {
@@ -31,14 +40,10 @@ struct ContentView: View {
 				
 				if gps.isAllowed {
 					if gps.isTracking {
-						Button("Stop Tracking") {
-							gps.stop()
-						}
+						Button("Stop Tracking") { gps.stop() }
 						.padding()
 					} else {
-						Button("Start Tracking") {
-							gps.start()
-						}
+						Button("Start Tracking") { gps.start() }
 						.padding()
 					}
 					
@@ -50,10 +55,15 @@ struct ContentView: View {
 					}
 						.padding()
 
-					Button("Reset") {
-						gps.reset()
+					if gps.locations.isNotEmpty {
+						HStack() {
+							Button("Transfer") { sendFile() }
+								.padding(.horizontal)
+							Button("Reset") { gps.reset() }
+							.padding(.horizontal)
+						}
+						.padding(.vertical)
 					}
-					.padding()
 				} else {
 					Button("Request Location Permission") {
 						gps.requestPermissions()

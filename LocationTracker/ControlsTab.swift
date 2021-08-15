@@ -10,9 +10,8 @@ import HealthKit
 
 struct ControlsTab: View {
 	@ObservedObject var gps = GPSManager.instance
+	@ObservedObject var files = SavedData.instance
 	public let heartRateType = HKQuantityType.quantityType(forIdentifier: .heartRate)!
-	@State var isFileSaved = FileManager.default.fileExists(at: .document(named: Self.filename))
-	static let filename = "saved.txt"
 	
 	var body: some View {
 		VStack() {
@@ -49,26 +48,46 @@ struct ControlsTab: View {
 				}
 				.padding()
 
-				HStack() {
-					Button("Save") {
-						gps.save(to: Self.filename)
-						isFileSaved = FileManager.default.fileExists(at: .document(named: Self.filename))
-					}
-					.padding(.horizontal)
-					
-					if isFileSaved {
-						Button("Share") {
-							UIApplication.shared.currentScene?.frontWindow?.rootViewController?.presentedest.share(something: [URL.document(named: Self.filename)])
-						}
-						.padding(.horizontal)
-
-						Button("Load") {
-							gps.load(from: Self.filename)
-						}
-						.padding(.horizontal)
+				Button("Save") {
+					if gps.save(to: SavedData.filename) {
+						files.savedPhoneDataURL = .document(named: SavedData.filename)
 					}
 				}
 				.padding()
+
+				if files.savedPhoneDataURL != nil || files.savedWatchDataURL != nil {
+					HStack() {
+						Text("Load")
+						if let url = files.savedPhoneDataURL {
+							Button("Phone") { gps.load(from: url) }
+								.padding(.horizontal)
+						}
+
+						if let url = files.savedWatchDataURL {
+							Button("Watch") { gps.load(from: url) }
+								.padding(.horizontal)
+						}
+					}
+					.padding()
+
+					HStack() {
+						Text("Share")
+							if let url = files.savedPhoneDataURL {
+								Button("Phone") {
+									UIApplication.shared.currentScene?.frontWindow?.rootViewController?.presentedest.share(something: [url])
+								}
+								.padding(.horizontal)
+							}
+
+						if let url = files.savedWatchDataURL {
+							Button("Watch") {
+								UIApplication.shared.currentScene?.frontWindow?.rootViewController?.presentedest.share(something: [url])
+							}
+							.padding(.horizontal)
+						}
+					}
+					.padding()
+				}
 			} else {
 				Button("Request Location Permission") {
 					gps.requestPermissions()

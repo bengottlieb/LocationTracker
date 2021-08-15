@@ -51,6 +51,11 @@ class MessageHandler: PortalMessageHandler {
 	}
 	
 	func didReceive(file: URL, fileType: PortalFileKind?, metadata: [String: Any]?, completion: @escaping () -> Void) {
+		
+		let newURL = URL.document(named: SavedData.watchFilename)
+		try? FileManager.default.removeItem(at: newURL)
+		try? FileManager.default.moveItem(at: file, to: newURL)
+		SavedData.instance.savedWatchDataURL = newURL
 		completion()
 	}
 	
